@@ -11,7 +11,6 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-
 // store.dispatch(addExpense({ description: 'Rent', amount:109500 }));
 
 // Set text filter calls
