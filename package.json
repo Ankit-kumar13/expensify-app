@@ -4,9 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "author": "An kit",
-  "engines": {
-    "yarn": "1.x"
-  },
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
