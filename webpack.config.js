@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack =  require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -13,7 +13,7 @@ if(process.env.NODE_ENV === 'test') {
 module.exports = (env) => {
 
     const isProduction =  env == 'production';
-    const CSSExtract = new ExtractTextPlugin('styles.css');
+    const CSSExtract = new MiniCssExtractPlugin('styles.css');
     
     return {
         entry: './src/app.js',
@@ -28,7 +28,6 @@ module.exports = (env) => {
                 exclude: /node_modules/
             },{
                 test: /\.s?css$/,
-                use: CSSExtract.extract({
                     use: [
                         {
                             loader : 'css-loader',
@@ -43,7 +42,6 @@ module.exports = (env) => {
                             }
                         }
                     ]
-                })
             }]
         },
         plugins: [
